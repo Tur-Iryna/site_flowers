@@ -1,0 +1,62 @@
+$text-color: #464646;
+$hover-color: #2a3329;
+$white-color: #ffffff;
+$accent-bg: #f6f6f2;
+$brown-color: #1f1b13;
+$green-color: #678162;
+
+%opensans-400 {
+  font-family: 'OpenSans-Regular', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+%opensans-600 {
+  font-family: 'OpenSans-SemiBold', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+%opensans-700 {
+  font-family: 'OpenSans-Bold', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+%roboto-300 {
+  font-family: 'RobotoCondensed-Light', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+%roboto-400 {
+  font-family: 'RobotoCondensed-Regular', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+%roboto-700 {
+  font-family: 'RobotoCondensed-Bold', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+
+
+%btn {
+  @extend %roboto-700;
+  text-transform: uppercase;
+  color: $white-color;
+  padding: 10px;
+  border: 1px solid $white-color;
+  width: 190px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 30px;
+}

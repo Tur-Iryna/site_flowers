@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Інтернет-магазин квітів-Flowers shop</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__inner">
+        <div class="header__top">
+          <a class="header__phone" href="+380953525723">(095)3525723</a>
+          <a class="logo" href="#">
+            <img class="logo__img" src="images/logo.png" alt="логотип">
+          </a>
+          <div class="user-nav">
+            <div class="user-nav__wishlist">
+              <a class="user-nav__link" href="#">
+                <img class="user-nav__img" src="images/icons/wishlist-icon.svg" alt="користувач">
+                <span class="user-nav__num">0</span>
+              </a>
+              <div class="wishlist-modal wishlist__none">
+                <div class="wishlist-modal__content">
+                  <div class="wishlist__close">
+                    <img class="wishlist__close-img" src="images/icons/icon-close.png" alt="">
+                  </div>
+                  <h5 class="wishlist__title">Обране</h5>
+                  <div class="wishlist__wrapper"></div>
+                </div>
+              </div>
+            </div>
+            <div class="user-nav__cart">
+              <a class="user-nav__link" href="#">
+                <img class="user-nav__img" src="images/icons/cart.svg" alt="кошик">
+                <div class="user-nav__num-cart">0</div>
+              </a>
+            </div>
+            <div class="cart-modal cart__none">
+              <div class="cart-modal__content">
+                <div class="cart__close">
+                  <img class="cart__close-img" src="images/icons/icon-close.png" alt="">
+                </div>
+                <h5 class="cart__title cart-none">Ваше замовлення</h5>
+                <div class="cart__alert" data-cart-empty role="alert">Кошик пустий</div>
+                <div class="cart__wrapper"></div>
+                <div class="cart__summary cart-none">Cумма замовлення:
+                  <span data-cart-delivery class="cart__summary-price">
+                    0
+                  </span>
+                  <span>грн.</span>
+                  <div class="cart__order" id="order">
+                    <h4 class="cart__order-title">Оформити замовлення</h4>
+                    <form class="form__order">
+                      <input class="form__order-input" type="text" placeholder="Ваш номер телефону">
+                      <button class="form__order-btn" type="submit">Замовити</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="user-nav__box">
+              <div class="modal" id="modal-user">
+                <div class="modal__content">
+                  <span class="modal__close">&times;</span>
+                  <h3 class="modal__title">Особистий кабінет</h3>
+                  <form class="modal__form" action="#">
+                    <div class="modal__btn-controls">
+                      <a class="modal__btn modal__btn--active" href="#tab-1">Авторизація</a>
+                      <a class="modal__btn" href="#tab-2">Реєстрація</a>
+                    </div>
+                    <div class="modal__btn-content">
+                      <div class="modal__btn-content__box modal__btn-content--active" id="tab-1">
+                        <input class="modal__input" type="text" placeholder="E-mail">
+                        <input class="modal__input" type="text" placeholder="Пароль">
+                        <button class="modal__btn">Увійти</button>
+                        <a class="modal__link" href="#">Забули пароль?</a>
+                      </div>
+                      <div class="modal__btn-content__box" id="tab-2">
+                        <input class="modal__input" type="text" placeholder="Ваше ім'я">
+                        <input class="modal__input" type="text" placeholder="Телефон">
+                        <input class="modal__input" type="text" placeholder="E-mail">
+                        <input class="modal__input" type="text" placeholder="Пароль">
+                        <input class="modal__input" type="text" placeholder="Підтвердіть пароль">
+                        <button class="modal__btn">Реєстрація</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <a class="user-nav__button" id="modal-button">
+                <img class="user-nav__img" src="images/icons/user-icon.svg" alt="кошик">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="header__bottom">
+          <nav class="menu">
+            <button class="menu__btn">
+              <img class="menu__img" src="images/icons/menu-btn.svg" alt="">
+              Меню
+            </button>
+            <ul class="menu__list">
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="#">Головна</a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="#about">Про нас</a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="#catalog">Каталог</a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="#delivery">Доставка</a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="#blog">Блог</a>
+              </li>
+              <li class="menu__list-item">
+                <a class="menu__list-link" href="#contacts">Контакти</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="main">
+    <section class="top-slider">
+      <div class="top-slider__inner">
+        <div class="slider">
+          <div class="slider__item" style="background-image: url('images/slider/slider-bg.jpg');">
+            <div class="container">
+              <div class="slider__content">
+                <h1 class="slider__title">КВІТИ ВІД FLOWER SHOP</h1>
+                <p class="slider__text">
+                  Порадуйте кохану людину неповторним букетом, зробленим одним із наших флористів.
+                </p>
+                <a class="slider__btn" href="#catalog">Каталог</a>
+                <a class="slider__btn" href="#">Замовити</a>
+              </div>
+            </div>
+          </div>
+          <div class="slider__item" style="background-image: url('images/slider/slider-bg.jpg');">
+            <div class="container">
+              <div class="slider__content">
+                <h1 class="slider__title">КВІТИ ВІД FLOWER SHOP</h1>
+                <p class="slider__text">
+                  Порадуйте кохану людину неповторним букетом, зробленим одним із наших флористів.
+                </p>
+                <a class="slider__btn" href="#catalog">Каталог</a>
+                <a class="slider__btn" href="#">Замовити</a>
+              </div>
+            </div>
+          </div>
+          <div class="slider__item" style="background-image: url('images/slider/slider-bg.jpg');">
+            <div class="container">
+              <div class="slider__content">
+                <h1 class="slider__title">КВІТИ ВІД FLOWER SHOP</h1>
+                <p class="slider__text">
+                  Порадуйте кохану людину неповторним букетом, зробленим одним із наших флористів.
+                </p>
+                <a class="slider__btn" href="#catalog">Каталог</a>
+                <a class="slider__btn" href="#">Замовити</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="info">
+      <div class="container">
+        <div class="info__inner">
+          <h2 class="info__title title" data-aos="zoom-in-right">Працюємо для вас</h2>
+          <div class="info__items">
+            <div class="info__item" .data-aos="fade-up">
+              <img class="info__img" src="images/item-1.svg" alt="">
+              <p class="info__text">Безкоштовна доставка по місту</p>
+            </div>
+            <div class="info__item" data-aos="fade-up">
+              <img class="info__img" src="images/item-2.svg" alt="">
+              <p class="info__text">Широкий вибір квітів</p>
+            </div>
+            <div class="info__item" data-aos="fade-up">
+              <img class="info__img" src="images/item-3.svg" alt="">
+              <p class="info__text">Гарантія якості</p>
+            </div>
+            <div class="info__item" data-aos="fade-up">
+              <img class="info__img" src="images/item-4.svg" alt="">
+              <p class="info__text">Допомога флориста в підборі квітів</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about__inner">
+          <div class="about__box">
+            <h4 class="about__title">Про нас</h4>
+            <p class="about__text">
+              Ми створюємо одні з найкращих квіткових композицій і квіткових дизайнів та забезпечуємо доставку квітів у
+              той же день замовлення.
+            </p>
+            <a class="about__btn" href="#">Детальніше</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="catalog" id="catalog">
+      <div class="container">
+        <div class="catalog__inner">
+          <h2 class="catalog__title title">Каталог</h2>
+          <p class="catalog__text">
+            У нас можна вибрати букет на будь-яке свято. Якщо з представленного вибору в каталозі ви не знайшли собі
+            букет, тоді можете звернутися до нас за складанням композиції за індивідуальним замовленням. Наші
+            спеціалісти допоможуть та створять букет, який вам точно сподобається.
+          </p>
+          <div class="catalog-box">
+            <div class="catalog-box__info catalog-content">
+              <a class="catalog-box__link" href="#">
+                <img class="catalog-box__img" src="images/catalog/1.jpg" alt="букет квітів">
+              </a>
+              <div class="catalog-box__wishlist">
+                <img class="catalog-box__image" src="images/icons/wishlist-icon.svg" alt="">
+              </div>
+              <div class="catalog-box__text">
+                <h5 class="catalog-box__title">Букет квітів"Ніжність"</h5>
+                <span class="catalog-box__price">450грн.</span>
+                <button data-cart type="button" class="catalog-box__btn">В кошик
+                  <img class="catalog__box-img" src="images/catalog/cart.svg" alt="">
+                </button>
+              </div>
+            </div>
+            <div class="catalog-box__info catalog-content">
+              <a class="catalog-box__link" href="#">
+                <img class="catalog-box__img" src="images/catalog/2.jpg" alt="букет квітів">
+              </a>
+              <div class="catalog-box__wishlist">
+                <img class="catalog-box__image" src="images/icons/wishlist-icon.svg" alt="">
+              </div>
+              <div class="catalog-box__text">
+                <h5 class="catalog-box__title">Букет квітів"Королівський"</h5>
+                <span class="catalog-box__price">650грн.</span>
+                <button data-cart type="button" class="catalog-box__btn">В кошик
+                  <img class="catalog__box-img" src="images/catalog/cart.svg" alt="">
+                </button>
+              </div>
+            </div>
+            <div class="catalog-box__info catalog-content">
+              <a class="catalog-box__link" href="#">
+                <img class="catalog-box__img" src="images/catalog/3.jpg" alt="букет квітів">
+              </a>
+              <div class="catalog-box__wishlist">
+                <img class="catalog-box__image" src="images/icons/wishlist-icon.svg" alt="">
+              </div>
+              <div class="catalog-box__text">
+                <h5 class="catalog-box__title">Букет квітів"Чарівний"</h5>
+                <span class="catalog-box__price">850грн.</span>
+                <button data-cart type="button" class="catalog-box__btn">В кошик
+                  <img class="catalog__box-img" src="images/catalog/cart.svg" alt="">
+                </button>
+              </div>
+            </div>
+            <div class="catalog-box__info catalog-content">
+              <a class="catalog-box__link" href="#">
+                <img class="catalog-box__img" src="images/catalog/4.jpg" alt="букет квітів">
+              </a>
+              <div class="catalog-box__wishlist">
+                <img class="catalog-box__image" src="images/icons/wishlist-icon.svg" alt="">
+              </div>
+              <div class="catalog-box__text">
+                <h5 class="catalog-box__title">Букет квітів"Весна"</h5>
+                <span class="catalog-box__price">450грн.</span>
+                <button data-cart type="button" class="catalog-box__btn">В кошик
+                  <img class="catalog__box-img" src="images/catalog/cart.svg" alt="">
+                </button>
+              </div>
+            </div>
+            <div class="catalog-box__info catalog-content">
+              <a class="catalog-box__link" href="#">
+                <img class="catalog-box__img" src="images/catalog/5.jpg" alt="букет квітів">
+              </a>
+              <div class="catalog-box__wishlist">
+                <img class="catalog-box__image" src="images/icons/wishlist-icon.svg" alt="">
+              </div>
+              <div class="catalog-box__text">
+                <h5 class="catalog-box__title">Букет квітів"Сонячне сяйво"</h5>
+                <span class="catalog-box__price">450грн.</span>
+                <button data-cart type="button" class="catalog-box__btn">В кошик
+                  <img class="catalog__box-img" src="images/catalog/cart.svg" alt="">
+                </button>
+              </div>
+            </div>
+            <div class="catalog-box__info catalog-content">
+              <a class="catalog-box__link" href="#">
+                <img class="catalog-box__img" src="images/catalog/2.jpg" alt="букет квітів">
+              </a>
+              <div class="catalog-box__wishlist">
+                <img class="catalog-box__image" src="images/icons/wishlist-icon.svg" alt="">
+              </div>
+              <div class="catalog-box__text">
+                <h5 class="catalog-box__title">Букет квітів"Щастя"</h5>
+                <span class="catalog-box__price">550грн.</span>
+                <button data-cart type="button" class="catalog-box__btn">В кошик
+                  <img class="catalog__box-img" src="images/catalog/cart.svg" alt="">
+                </button>
+              </div>
+            </div>
+            <div class="catalog-box__info catalog-content">
+              <a class="catalog-box__link" href="#">
+                <img class="catalog-box__img" src="images/catalog/1.jpg" alt="букет квітів">
+              </a>
+              <div class="catalog-box__wishlist">
+                <img class="catalog-box__image" src="images/icons/wishlist-icon.svg" alt="">
+              </div>
+              <div class="catalog-box__text">
+                <h5 class="catalog-box__title">Букет квітів"Ніжність"</h5>
+                <span class="catalog-box__price">550грн.</span>
+                <button data-cart type="button" class="catalog-box__btn">В кошик
+                  <img class="catalog__box-img" src="images/catalog/cart.svg" alt="">
+                </button>
+              </div>
+            </div>
+            <div class="catalog-box__info catalog-content">
+              <a class="catalog-box__link" href="#">
+                <img class="catalog-box__img" src="images/catalog/6.jpg" alt="букет квітів">
+              </a>
+              <div class="catalog-box__wishlist">
+                <img class="catalog-box__image" src="images/icons/wishlist-icon.svg" alt="">
+              </div>
+              <div class="catalog-box__text">
+                <h5 class="catalog-box__title">Букет квітів "Троянди"</h5>
+                <span class="catalog-box__price">550грн.</span>
+                <button data-cart type="button" class="catalog-box__btn">В кошик
+                  <img class="catalog__box-img" src="images/catalog/cart.svg" alt="">
+                </button>
+              </div>
+            </div>
+            <div class="catalog-box__info catalog-content">
+              <a class="catalog-box__link" href="#">
+                <img class="catalog-box__img" src="images/catalog/1.jpg" alt="букет квітів">
+              </a>
+              <div class="catalog-box__wishlist">
+                <img class="catalog-box__image" src="images/icons/wishlist-icon.svg" alt="">
+              </div>
+              <div class="catalog-box__text">
+                <h5 class="catalog-box__title">Букет квітів"Ніжність"</h5>
+                <span class="catalog-box__price">450грн.</span>
+                <button data-cart type="button" class="catalog-box__btn">В кошик
+                  <img class="catalog__box-img" src="images/catalog/cart.svg" alt="">
+                </button>
+              </div>
+            </div>
+            <div class="catalog-box__info catalog-content">
+              <a class="catalog-box__link" href="#">
+                <img class="catalog-box__img" src="images/catalog/1.jpg" alt="букет квітів">
+              </a>
+              <div class="catalog-box__wishlist">
+                <img class="catalog-box__image" src="images/icons/wishlist-icon.svg" alt="">
+              </div>
+              <div class="catalog-box__text">
+                <h5 class="catalog-box__title">Букет квітів"Ніжність"</h5>
+                <span class="catalog-box__price">450грн.</span>
+                <button data-cart type="button" class="catalog-box__btn">В кошик
+                  <img class="catalog__box-img" src="images/catalog/cart.svg" alt="">
+                </button>
+              </div>
+            </div>
+            <div class="catalog-box__info catalog-content">
+              <a class="catalog-box__link" href="#">
+                <img class="catalog-box__img" src="images/catalog/1.jpg" alt="букет квітів">
+              </a>
+              <div class="catalog-box__wishlist">
+                <img class="catalog-box__image" src="images/icons/wishlist-icon.svg" alt="">
+              </div>
+              <div class="catalog-box__text">
+                <h5 class="catalog-box__title">Букет квітів"Ніжність"</h5>
+                <span class="catalog-box__price">450грн.</span>
+                <button data-cart type="button" class="catalog-box__btn">В кошик
+                  <img class="catalog__box-img" src="images/catalog/cart.svg" alt="">
+                </button>
+              </div>
+            </div>
+            <div class="catalog-box__info catalog-content">
+              <a class="catalog-box__link" href="#">
+                <img class="catalog-box__img" src="images/catalog/1.jpg" alt="букет квітів">
+              </a>
+              <div class="catalog-box__wishlist">
+                <img class="catalog-box__image" src="images/icons/wishlist-icon.svg" alt="">
+              </div>
+              <div class="catalog-box__text">
+                <h5 class="catalog-box__title">Букет квітів"Ніжність"</h5>
+                <span class="catalog-box__price">450грн.</span>
+                <button data-cart type="button" class="catalog-box__btn">В кошик
+                  <img class="catalog__box-img" src="images/catalog/cart.svg" alt="">
+                </button>
+              </div>
+            </div>
+          </div>
+          <a class="catalog__btn">Показати більше товарів</a>
+        </div>
+      </div>
+    </section>
+    <section class="team">
+      <div class="container">
+        <h2 class="team__title title">Наша команда</h2>
+        <div class="team__inner">
+          <div class="team__info" data-aos="flip-left">
+            <img class="team__img" src="images/team/1.jpg" alt="">
+            <div class="team__box">
+              <p class="team__name">Марія</p>
+              <p class="team__text">Керівник</p>
+            </div>
+          </div>
+          <div class="team__info" data-aos="flip-left">
+            <img class="team__img" src="images/team/2.jpg" alt="">
+            <div class="team__box">
+              <p class="team__name">Валерія</p>
+              <p class="team__text">Флорист</p>
+            </div>
+          </div>
+          <div class="team__info" data-aos="flip-left">
+            <img class="team__img" src="images/team/3.jpg" alt="">
+            <div class="team__box">
+              <p class="team__name">Світлана</p>
+              <p class="team__text">Флорист</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="delivery" id="delivery">
+      <div class="container">
+        <h2 class="delivery__title title">Доставка та оплата</h2>
+        <div class="delivery__inner">
+          <div class="delivery__text">
+            <ul class="delivery__items">
+              <li class="delivery__item">Замовляєте букет на нашому сайті</li>
+              <li class="delivery__item">Оплачуєте товар через картку VISA або MC, або Приват24</li>
+              <li class="delivery__item">​Вам передзвонять наші менеджери, якщо потрібно щось уточнити</li>
+              <li class="delivery__item">Надсилаємо фото зібраного букета, щоб узгодити все</li>
+              <li class="delivery__item">​Доставляємо букет одержувачу протягом 2-х годин</li>
+              <li class="delivery__item">​Сповістимо Вас дзвінком або повідомленням про доставку букета</li>
+            </ul>
+          </div>
+          <div class="delivery__image">
+            <img class="delivery__img" src="images/7.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bestsellers">
+      <div class="container">
+        <h2 class="bestsellers__title title">Хіти продаж</h2>
+        <div class="bestsellers__inner">
+          <div class="bestsellers__slider">
+            <div class="bestsellers__info">
+              <div class="bestellers__info-box">
+                <div class="catalog-box__info bestsellers__box-info">
+                  <a class="catalog-box__link bestsellers__box__link" href="#">
+                    <img class="catalog-box__img bestsellers__box-img" src="images/catalog/2.jpg" alt="букет квітів">
+                  </a>
+                  <div class="catalog-box__wishlist bestsellers__box-wishlist">
+                    <img class="catalog-box__image bestsellers__box-image" src="images/icons/wishlist-icon.svg" alt="">
+                  </div>
+                  <div class="catalog-box__text bestsellers__box-text">
+                    <h5 class="catalog-box__title bestsellers__box-title">Букет квітів"Королівський"</h5>
+                    <span class="catalog-box__price bestsellers__box-price">650грн.</span>
+                    <button class="catalog-box__btn bestsellers__box-btn">В кошик
+                      <img class="catalog__box-img bestsellers__box-img" src="images/catalog/cart.svg" alt="">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bestsellers__info">
+              <div class="bestellers__info-box">
+                <div class="catalog-box__info bestsellers__box-info">
+                  <a class="catalog-box__link bestsellers__box__link" href="#">
+                    <img class="catalog-box__img bestsellers__box-img" src="images/catalog/2.jpg" alt="букет квітів">
+                  </a>
+                  <div class="catalog-box__wishlist bestsellers__box-wishlist">
+                    <img class="catalog-box__image bestsellers__box-image" src="images/icons/wishlist-icon.svg" alt="">
+                  </div>
+                  <div class="catalog-box__text bestsellers__box-text">
+                    <h5 class="catalog-box__title bestsellers__box-title">Букет квітів"Королівський"</h5>
+                    <span class="catalog-box__price bestsellers__box-price">650грн.</span>
+                    <button class="catalog-box__btn bestsellers__box-btn">В кошик
+                      <img class="catalog__box-img bestsellers__box-img" src="images/catalog/cart.svg" alt="">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bestsellers__info">
+              <div class="bestellers__info-box">
+                <div class="catalog-box__info bestsellers__box-info">
+                  <a class="catalog-box__link bestsellers__box__link" href="#">
+                    <img class="catalog-box__img bestsellers__box-img" src="images/catalog/3.jpg" alt="букет квітів">
+                  </a>
+                  <div class="catalog-box__wishlist bestsellers__box-wishlist">
+                    <img class="catalog-box__image bestsellers__box-image" src="images/icons/wishlist-icon.svg" alt="">
+                  </div>
+                  <div class="catalog-box__text bestsellers__box-text">
+                    <h5 class="catalog-box__title bestsellers__box-title">Букет квітів"Чарівний"</h5>
+                    <span class="catalog-box__price bestsellers__box-price">850грн.</span>
+                    <button class="catalog-box__btn bestsellers__box-btn">В кошик
+                      <img class="catalog__box-img bestsellers__box-img" src="images/catalog/cart.svg" alt="">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bestsellers__info">
+              <div class="bestellers__info-box">
+                <div class="catalog-box__info bestsellers__box-info">
+                  <a class="catalog-box__link bestsellers__box__link" href="#">
+                    <img class="catalog-box__img bestsellers__box-img" src="images/catalog/4.jpg" alt="букет квітів">
+                  </a>
+                  <div class="catalog-box__wishlist bestsellers__box-wishlist">
+                    <img class="catalog-box__image bestsellers__box-image" src="images/icons/wishlist-icon.svg" alt="">
+                  </div>
+                  <div class="catalog-box__text bestsellers__box-text">
+                    <h5 class="catalog-box__title bestsellers__box-title">Букет квітів"Весна"</h5>
+                    <span class="catalog-box__price bestsellers__box-price">450грн.</span>
+                    <button class="catalog-box__btn bestsellers__box-btn">В кошик
+                      <img class="catalog__box-img bestsellers__box-img" src="images/catalog/cart.svg" alt="">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bestsellers__info">
+              <div class="bestellers__info-box">
+                <div class="catalog-box__info bestsellers__box-info">
+                  <a class="catalog-box__link bestsellers__box__link" href="#">
+                    <img class="catalog-box__img bestsellers__box-img" src="images/catalog/5.jpg" alt="букет квітів">
+                  </a>
+                  <div class="catalog-box__wishlist bestsellers__box-wishlist">
+                    <img class="catalog-box__image bestsellers__box-image" src="images/icons/wishlist-icon.svg" alt="">
+                  </div>
+                  <div class="catalog-box__text bestsellers__box-text">
+                    <h5 class="catalog-box__title bestsellers__box-title">Букет квітів"Сонячне сяйво"</h5>
+                    <span class="catalog-box__price bestsellers__box-price">450грн.</span>
+                    <button class="catalog-box__btn bestsellers__box-btn">В кошик
+                      <img class="catalog__box-img bestsellers__box-img" src="images/catalog/cart.svg" alt="">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bestsellers__info">
+              <div class="bestellers__info-box">
+                <div class="catalog-box__info bestsellers__box-info">
+                  <a class="catalog-box__link bestsellers__box__link" href="#">
+                    <img class="catalog-box__img bestsellers__box-img" src="images/catalog/2.jpg" alt="букет квітів">
+                  </a>
+                  <div class="catalog-box__wishlist bestsellers__box-wishlist">
+                    <img class="catalog-box__image bestsellers__box-image" src="images/icons/wishlist-icon.svg" alt="">
+                  </div>
+                  <div class="catalog-box__text bestsellers__box-text">
+                    <h5 class="catalog-box__title bestsellers__box-title">Букет квітів"Щастя"</h5>
+                    <span class="catalog-box__price bestsellers__box-price">550грн.</span>
+                    <button class="catalog-box__btn bestsellers__box-btn">В кошик
+                      <img class="catalog__box-img bestsellers__box-img" src="images/catalog/cart.svg" alt="">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bestsellers__info">
+              <div class="bestellers__info-box">
+                <div class="catalog-box__info bestsellers__box-info">
+                  <a class="catalog-box__link bestsellers__box__link" href="#">
+                    <img class="catalog-box__img bestsellers__box-img" src="images/catalog/2.jpg" alt="букет квітів">
+                  </a>
+                  <div class="catalog-box__wishlist bestsellers__box-wishlist">
+                    <img class="catalog-box__image bestsellers__box-image" src="images/icons/wishlist-icon.svg" alt="">
+                  </div>
+                  <div class="catalog-box__text bestsellers__box-text">
+                    <h5 class="catalog-box__title bestsellers__box-title">Букет квітів"Щастя"</h5>
+                    <span class="catalog-box__price bestsellers__box-price">550грн.</span>
+                    <button class="catalog-box__btn bestsellers__box-btn">В кошик
+                      <img class="catalog__box-img bestsellers__box-img" src="images/catalog/cart.svg" alt="">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bestsellers__info">
+              <div class="bestellers__info-box">
+                <div class="catalog-box__info bestsellers__box-info">
+                  <a class="catalog-box__link bestsellers__box__link" href="#">
+                    <img class="catalog-box__img bestsellers__box-img" src="images/catalog/1.jpg" alt="букет квітів">
+                  </a>
+                  <div class="catalog-box__wishlist bestsellers__box-wishlist">
+                    <img class="catalog-box__image bestsellers__box-image" src="images/icons/wishlist-icon.svg" alt="">
+                  </div>
+                  <div class="catalog-box__text bestsellers__box-text">
+                    <h5 class="catalog-box__title bestsellers__box-title">Букет квітів"Ніжність"</h5>
+                    <span class="catalog-box__price bestsellers__box-price">550грн.</span>
+                    <button class="catalog-box__btn bestsellers__box-btn">В кошик
+                      <img class="catalog__box-img bestsellers__box-img" src="images/catalog/cart.svg" alt="">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bestsellers__info">
+              <div class="bestellers__info-box">
+                <div class="catalog-box__info bestsellers__box-info">
+                  <a class="catalog-box__link bestsellers__box__link" href="#">
+                    <img class="catalog-box__img bestsellers__box-img" src="images/catalog/2.jpg" alt="букет квітів">
+                  </a>
+                  <div class="catalog-box__wishlist bestsellers__box-wishlist">
+                    <img class="catalog-box__image bestsellers__box-image" src="images/icons/wishlist-icon.svg" alt="">
+                  </div>
+                  <div class="catalog-box__text bestsellers__box-text">
+                    <h5 class="catalog-box__title bestsellers__box-title">Букет квітів"Щастя"</h5>
+                    <span class="catalog-box__price bestsellers__box-price">550грн.</span>
+                    <button class="catalog-box__btn bestsellers__box-btn">В кошик
+                      <img class="catalog__box-img bestsellers__box-img" src="images/catalog/cart.svg" alt="">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="reviews">
+      <div class="container">
+        <h2 class="reviews__title title">Відгуки покупців</h2>
+        <p class="reviews__text">
+          Кожний ваш відгук робить нас щасливими
+        </p>
+        <div class="reviews__inner">
+          <div class="reviews__slider">
+            <div class="reviews__info">
+              <div class="reviews__box">
+                <img class="reviews__img" src="images/reviews/1.png" alt="">
+                <p class="reviews__desc">
+                  “Замовляла квіти у неробочий час (увечері), але зі мною дуже оперативно зв'язався співробітник та
+                  пообіцяв доставити букет вранці у призначений час. Так і сталося, квіти були доставлені з точністю
+                  секунда в секунду, свіжі та красиві. Рекомендую.”
+                </p>
+                <p class="reviews__name">Тетяна</p>
+              </div>
+              <div class="reviews__box">
+                <img class="reviews__img" src="images/reviews/2.png" alt="">
+                <p class="reviews__desc">
+                  ​“Сам не фахівець з квітів, але дружині дуже сподобався оригінальний весняний букет, зібраний із
+                  позитивним настроєм. Обов'язково буду замовляти ще.”
+                </p>
+                <p class="reviews__name">Віктор</p>
+              </div>
+            </div>
+            <div class="reviews__info">
+              <div class="reviews__box">
+                <img class="reviews__img" src="images/reviews/1.png" alt="">
+                <p class="reviews__desc">
+                  “Замовляла квіти у неробочий час (увечері), але зі мною дуже оперативно зв'язався співробітник та
+                  пообіцяв доставити букет вранці у призначений час. Так і сталося, квіти були доставлені з точністю
+                  секунда в секунду, свіжі та красиві. Рекомендую.”
+                </p>
+                <p class="reviews__name">Тетяна</p>
+              </div>
+              <div class="reviews__box">
+                <img class="reviews__img" src="images/reviews/2.png" alt="">
+                <p class="reviews__desc">
+                  ​“Сам не фахівець з квітів, але дружині дуже сподобався оригінальний весняний букет, зібраний із
+                  позитивним настроєм. Обов'язково буду замовляти ще.”
+                </p>
+                <p class="reviews__name">Віктор</p>
+              </div>
+            </div>
+            <div class="reviews__info">
+              <div class="reviews__box">
+                <img class="reviews__img" src="images/reviews/1.png" alt="">
+                <p class="reviews__desc">
+                  “Замовляла квіти у неробочий час (увечері), але зі мною дуже оперативно зв'язався співробітник та
+                  пообіцяв доставити букет вранці у призначений час. Так і сталося, квіти були доставлені з точністю
+                  секунда в секунду, свіжі та красиві. Рекомендую.”
+                </p>
+                <p class="reviews__name">Тетяна</p>
+              </div>
+              <div class="reviews__box">
+                <img class="reviews__img" src="images/reviews/2.png" alt="">
+                <p class="reviews__desc">
+                  ​“Сам не фахівець з квітів, але дружині дуже сподобався оригінальний весняний букет, зібраний із
+                  позитивним настроєм. Обов'язково буду замовляти ще.”
+                </p>
+                <p class="reviews__name">Віктор</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="blog" id="blog">
+      <div class="container">
+        <h2 class="blog__title title">Блог</h2>
+        <div class="blog__inner">
+          <div class="blog__info" data-aos="fade-up">
+            <img class="blog__info-img" src="images/blog/1.jpg" alt="">
+            <div class="blog__info-text">
+              <h5 class="blog__info-title">ЩО РОБИТИ,ЩОБ ЗБЕРЕГТИ КВІТИ СВІЖИМИ</h5>
+              <p class="blog__info-desc">
+                Літо-це пора тепла та сонця.В літню пору рока,як ніколи важливо зберегти свіжість квітів.Декалька порад
+                як зберегти гарний та свіжий вигляд квітів влітку.
+              </p>
+              <div class="blog__info-box">
+                <a class="blog__info-link" href="#">Детальніше</a>
+                <p class="blog__info-date">22/08/2022</p>
+              </div>
+            </div>
+          </div>
+          <div class="blog__info" data-aos="fade-up">
+            <div class="blog__info-text">
+              <h5 class="blog__info-title">ЯКІ КВІТИ ПОДАРУВАТИ В ЛІТКУ?</h5>
+              <p class="blog__info-desc">
+                Літо-це пора тепла та сонця.В літню пору рока,як ніколи важливо зберегти свіжість квітів.Декалька порад
+                як зберегти гарний та свіжий вигляд квітів влітку.
+              </p>
+              <div class="blog__info-box">
+                <a class="blog__info-link" href="#">Детальніше</a>
+                <p class="blog__info-date">22/08/2022</p>
+              </div>
+            </div>
+            <img class="blog__info-img" src="images/blog/2.jpg" alt="">
+          </div>
+          <div class="blog__info">
+            <img class="blog__info-img" src="images/blog/3.jpg" alt="">
+            <div class="blog__info-text">
+              <h5 class="blog__info-title">ЯКІ КВІТИ ПОДАРУВАТИ В ЛІТКУ?</h5>
+              <p class="blog__info-desc">
+                Літо-це пора тепла та сонця.В літню пору рока,як ніколи важливо зберегти свіжість квітів.Декалька порад
+                як зберегти гарний та свіжий вигляд квітів влітку.
+              </p>
+              <div class="blog__info-box">
+                <a class="blog__info-link" href="#">Детальніше</a>
+                <p class="blog__info-date">22/08/2022</p>
+              </div>
+            </div>
+          </div>
+          <div class="blog__info" data-aos="fade-up">
+            <div class="blog__info-text">
+              <h5 class="blog__info-title">ЯКІ КВІТИ ПОДАРУВАТИ В ЛІТКУ?</h5>
+              <p class="blog__info-desc">
+                Літо-це пора тепла та сонця.В літню пору рока,як ніколи важливо зберегти свіжість квітів.Декалька порад
+                як зберегти гарний та свіжий вигляд квітів влітку.
+              </p>
+              <div class="blog__info-box">
+                <a class="blog__info-link" href="#">Детальніше</a>
+                <p class="blog__info-date">22/08/2022</p>
+              </div>
+            </div>
+            <img class="blog__info-img" src="images/blog/4.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="contacts" id="contacts">
+      <div class="container">
+        <div class="contacts__inner">
+          <img class="contacts__img" src="images/contacts-bg.jpg" alt="">
+          <div class="contacts__box">
+            <form class="contacts__form" action="#">
+              <h3 class="contacts__title">Зв'язатись з нами</h3>
+              <input class="contacts__input" type="text" placeholder="Введіть ім'я">
+              <input class="contacts__input" type="text" placeholder="Введіть e-mail">
+              <textarea class="contacts__textarea">Додати коментар</textarea>
+              <button class="contacts__btn">Надіслати</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__info">
+            <a class="logo" href="#">
+              <img class="logo__img" src="images/logo.png" alt="логотип">
+            </a>
+            <div class="footer__text">
+              <p class="footer__desc">
+                Наша адреса:<br>Київ,вул.Корицького,11
+              </p>
+              <p class="footer__desc">
+                Графік роботи:<br>пн-нд з 08:00 до 21:00
+              </p>
+            </div>
+          </div>
+          <div class="footer__info footer__box">
+            <h5 class="footer__title">Інформація</h5>
+            <ul class="footer__list">
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#">Головна</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#about">Про нас</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#catalog">Каталог</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#delivery">Доставка</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#blog">Блог</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__info footer__box">
+            <h5 class="footer__title">Обліковий запис</h5>
+            <ul class="footer__list">
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#">Аккаунт</a>
+              </li>
+              <li class="footer__menu-item">
+                <a class="footer__menu-link" href="#">Статус замовлення</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer__newsletter footer__box">
+            <h4 class="footer__title">
+              Підписатись на розсилку
+            </h4>
+            <p class="footer__newsletter-text">
+              Підписуйтеся на нашу розсилку та отримуйте новини
+            </p>
+            <div class="footer__newsletter-form">
+              <input class="footer__newsletter-input" type="text" placeholder="Ваш email">
+              <button class="footer__newsletter-btn" class="submit">
+                Підписатися
+              </button>
+            </div>
+            <div class="footer-social">
+              <a class="footer-social__link-facebook" href="#">
+                <img class="footer-social__link-img" src="images/icons/facebook.svg" alt="">
+              </a>
+              <a class="footer-social__link-twitter" href="#">
+                <img class="footer-social__link-img" src="images/icons/twitter.svg" alt="">
+              </a>
+              <a class="footer-social__link-google" href="#">
+                <img class="footer-social__link-img" src="images/icons/google+.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="connect">
+      <div class="connect__phone">
+        <img class="connect__img" src="images/phone.png" alt="">
+      </div>
+      <div class="connect__text">Кнопка зв'язку</div>
+    </div>
+
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="js/main.min.js"></script>
+</body>
+
+</html>
