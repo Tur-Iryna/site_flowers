@@ -4,10 +4,6 @@
 @import 'global';
 @import 'libs';
 
-
-
-
-
 .connect {
   position: fixed;
   right: 29px;
@@ -26,22 +22,16 @@
   cursor: pointer;
   opacity: 0;
   transition: .3s all;
-
   &:hover .connect__img {
     transition: .5s ease-in-out;
     transform: scale(0);
     opacity: 0;
   }
-
   &:hover .connect__text {
     transform: scaleX(1);
     transition: .5s ease-in-out;
     opacity: 1;
-
   }
-
-
-
   &:hover::before,
   &:hover::after {
     content: '';
@@ -55,22 +45,17 @@
     animation: pulse 1.8s linear infinite;
     opacity: 0;
   }
-
   &:hover::after {
     animation-delay: .5s;
   }
-
   &__phone {
     position: absolute;
-
   }
-
   &__img {
     width: 100%;
     height: 100%;
     animation: phone .9s ease-in-out infinite;
   }
-
   &__text {
     opacity: 0;
     position: absolute;
@@ -79,45 +64,34 @@
     font-size: 15px;
     transform: scaleX(-1);
     transition: .5s ease-in-out;
-
   }
-
   &__hidden {
     opacity: 1;
   }
-
 }
-
-
 
 @keyframes phone {
   0% {
     transform: rotate(-20deg);
   }
-
   50% {
     transform: rotate(21deg);
   }
 }
-
-
 
 @keyframes pulse {
   0% {
     transform: scale(0.5);
     opacity: 0;
   }
-
   50% {
     opacity: 1;
   }
-
   100% {
     transform: scale(1.2);
     opacity: 9;
   }
 }
-
 
 .header {
   position: fixed;
@@ -126,21 +100,18 @@
   top: 0;
   background-color: $white-color;
   z-index: 90;
-
   &__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 25px 0;
   }
-
   &__phone {
     color: $brown-color;
     font-size: 19px;
     position: relative;
     padding-left: 10px;
     margin-left: 10px;
-
     &::before {
       content: '';
       position: absolute;
@@ -151,24 +122,18 @@
       left: -10px;
     }
   }
-
   &__bottom {
     display: flex;
     justify-content: center;
     padding-bottom: 20px;
   }
-
 }
-
-
 
 .menu {
   &__list {
     display: flex;
     gap: 30px;
-
   }
-
   &__btn {
     border: none;
     background-color: transparent;
@@ -177,31 +142,24 @@
     display: none;
     color: $text-color;
   }
-
   &__list-link {
     text-transform: uppercase;
     color: $brown-color;
     @extend %roboto-700;
     transition: .2s all;
-
     &:hover {
       padding-bottom: 5px;
       border-bottom: 2px solid $hover-color;
     }
   }
-
-
 }
 
 .user-nav {
   display: flex;
   gap: 40px;
-
   &__link {
     position: relative;
   }
-
-
   &__num,
   &__num-cart {
     position: absolute;
@@ -217,7 +175,6 @@
     line-height: 14px;
     padding-left: 1px;
   }
-
   &__button {
     cursor: pointer;
   }
@@ -233,8 +190,6 @@
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
-
-
   &__content {
     background-color: $white-color;
     margin: 15% auto;
@@ -243,28 +198,22 @@
     max-width: 500px;
     text-align: center;
   }
-
   &__title {
     margin-bottom: 25px;
     font-size: 30px;
   }
-
   &__btn-controls {
     display: flex;
     gap: 30px;
     justify-content: center;
     margin-bottom: 40px;
-
   }
-
   &__btn-content__box {
     display: none;
-
     &.modal__btn-content--active {
       display: block;
     }
   }
-
   &__btn {
     background-color: $green-color;
     border-radius: 15px;
@@ -275,7 +224,6 @@
     margin-top: 40px;
     width: 150px;
   }
-
   &__input {
     display: block;
     max-width: 300px;
@@ -284,26 +232,21 @@
     padding: 10px 15px;
     outline: none;
     border: 1px solid $brown-color;
-
     &::placeholder {
       font-size: 15px;
     }
   }
-
   &__link {
     display: block;
     margin-top: 40px;
     font-size: 15px;
     color: $text-color;
-
   }
-
   &__close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-
     &:hover,
     &:focus {
       color: #000;
@@ -311,43 +254,30 @@
       cursor: pointer;
     }
   }
-
 }
-
-
-
 
 .slider {
   padding-top: 163px;
-
   &__item {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     min-height: 800px;
   }
-
   &__content {
     margin-top: 150px;
     max-width: 600px;
     border: 3px solid $white-color;
     padding: 70px 40px;
     box-shadow: #ffffff 1px 0 10px;
-
   }
-
-
-
   &__title {
     font-size: 55px;
     line-height: 70px;
     color: $white-color;
     @extend %opensans-700;
     margin-bottom: 20px;
-
-
   }
-
   &__text {
     font-size: 25px;
     line-height: 40px;
@@ -356,44 +286,35 @@
     max-width: 600px;
     margin-bottom: 20px;
   }
-
   &__btn {
     @extend %btn;
     animation: glowing 1300ms infinite;
-
     &:hover {
       background-color: $white-color;
       color: $text-color;
     }
-
     &:last-child {
       margin-left: 90px;
     }
   }
-
   @keyframes glowing {
     0% {
       box-shadow: 0 0 5px $white-color;
     }
-
     50% {
       box-shadow: 0 0 20px $white-color;
     }
-
     100% {
       box-shadow: 0 0 5px $white-color;
     }
   }
-
 }
-
 
 .slick-dots {
   display: flex;
   justify-content: center;
 
 }
-
 .slider .slick-dots button {
   width: 12px;
   height: 12px;
@@ -403,18 +324,14 @@
   padding: 0;
   font-size: 0;
 }
-
-
 .slider .slick-dots .slick-active button {
   background-color: #ec8ed9;
 }
-
 .slider .slick-dots li {
   display: inline-block;
   margin: 0 5px;
 
 }
-
 .slider .slick-dots {
   margin-top: -45px;
   position: relative;
@@ -422,38 +339,28 @@
   text-align: center;
 }
 
-
-
 .info {
   padding: 90px 0;
-
   &__title {
     margin-bottom: 90px;
   }
-
   &__items {
     display: flex;
     justify-content: space-between;
   }
-
   &__item {
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-
   }
-
   &__img {
     margin-bottom: 25px;
   }
-
   &__text {
     font-size: 14px;
-
   }
 }
-
 
 .about {
   background-image: url('../images/bg-about.jpg');
@@ -461,37 +368,28 @@
   background-position: left;
   background-size: cover;
   min-height: 750px;
-
   &__inner {
     display: flex;
     justify-content: end;
   }
-
   &__box {
     color: $white-color;
     background-color: $green-color;
     padding: 120px 70px;
     margin-top: 160px;
-
   }
-
-
-
   &__title {
     font-size: 40px;
     line-height: 35px;
     @extend %roboto-700;
     margin-bottom: 30px;
   }
-
   &__text {
     margin-bottom: 30px;
     max-width: 500px;
   }
-
   &__btn {
     @extend %btn;
-
     &:hover {
       background-color: $white-color;
       color: $text-color;
@@ -503,23 +401,16 @@
   padding: 100px 0 70px;
   background-color: $accent-bg;
   text-align: center;
-
   &__title {
     margin-bottom: 40px;
-
   }
-
   &__text {
     font-size: 15px;
     line-height: 25px;
     max-width: 750px;
     margin: 0 auto 95px auto;
     text-align: center;
-
-
   }
-
-
   &-box {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -527,41 +418,29 @@
     justify-content: center;
     gap: 120px 30px;
     padding-bottom: 90px;
-
   }
-
   &-box__info {
     background-color: $white-color;
     position: relative;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     transition: .3s all;
-
-
     &:hover {
       transform: scale(1.1);
 
       .catalog-box__wishlist {
         transform: scale(100%);
-
       }
-
-
     }
   }
-
   &-box__link {
     display: block;
     font-size: 15px;
-
-
   }
 
   &-box__img {
     margin: 0 auto 25px;
     width: 350px;
-
   }
-
   &-box__wishlist {
     position: absolute;
     right: 20px;
@@ -572,34 +451,26 @@
     border-radius: 50%;
     transform: scale(0);
     cursor: pointer;
-
     &:hover {
       background-color: #e79494;
     }
   }
-
   &-box__image {
     margin: 6px auto;
-
   }
-
   &-box__text {
     text-align: center;
     padding-bottom: 20px;
-
   }
-
   &-box__title {
     font-size: 20px;
     margin-bottom: 20px;
     @extend %roboto-400;
   }
-
   &-box__price {
     display: block;
     margin-bottom: 30px;
   }
-
   &-box__btn {
     display: inline-flex;
     gap: 10px;
@@ -614,13 +485,10 @@
     border-radius: 20px;
     transition: .3s all;
     color: $text-color;
-
     &:hover {
       background-color: #e5e5e5;
     }
-
   }
-
   &__btn {
     border: none;
     background-color: transparent;
@@ -630,7 +498,6 @@
     @extend %roboto-700;
     padding-right: 10px;
     position: relative;
-
     &:after {
       content: '';
       position: absolute;
@@ -641,77 +508,60 @@
       right: -10px;
     }
   }
-
-
 }
-
 
 .team {
   padding: 90px 0 120px;
   background-color: $accent-bg;
-
   &__title {
     margin-bottom: 90px;
   }
-
   &__inner {
     display: flex;
     gap: 20px;
     position: relative;
-
   }
-
   &__info {
     text-align: center;
   }
-
   &__img {
     width: 380px;
     height: 250px;
     object-fit: cover;
   }
-
   &__box {
     background-color: $white-color;
   }
-
   &__name {
     @extend %roboto-700;
     text-transform: uppercase;
     margin-bottom: 20px;
     padding-top: 30px;
   }
-
   &__text {
     padding-bottom: 30px;
-
   }
 }
 
 .delivery {
   padding: 100px 0 130px;
-
   &__title {
     margin-bottom: 100px;
   }
-
   &__inner {
     display: flex;
     gap: 90px;
     justify-content: space-between;
   }
-
   &__text {
     margin-top: 40px;
     flex-basis: 550px;
   }
-
   &__item {
     font-size: 19px;
     @extend %roboto-700;
     position: relative;
     padding-left: 40px;
-
     &::before {
       content: '';
       position: absolute;
@@ -721,24 +571,15 @@
       top: 0;
       left: -4px;
     }
-
-
   }
-
-
-
   &__item {
     padding-bottom: 35px;
-
     &:last-child {
       padding-bottom: 0;
     }
   }
-
   &__image {
     position: relative;
-
-
     &::after {
       content: '';
       position: absolute;
@@ -750,7 +591,6 @@
       z-index: -1;
     }
   }
-
   &__img {
     object-fit: cover;
     flex-basis: 450px;
@@ -758,31 +598,21 @@
   }
 }
 
-
 .bestsellers {
   padding: 60px 0 90px;
   background-color: $accent-bg;
-
   &__title {
     margin-bottom: 90px;
   }
-
   &__info-box {
     width: 290px;
     display: block;
   }
-
   &__box-info {
     box-shadow: none;
     margin: 0 20px;
   }
-
-
-
 }
-
-
-
 .slick-arrow {
   border: none;
   outline: none;
@@ -792,38 +622,27 @@
   z-index: 5;
   cursor: pointer;
 }
-
 .slick-next {
   right: -30px;
 }
-
 .slick-prev {
   left: -30px;
 }
 
-
-
-
 .reviews {
   padding: 90px 0 100px;
-
   &__title {
     margin-bottom: 30px;
   }
-
   &__text {
     margin-bottom: 40px;
     text-align: center;
-
   }
-
   &__info {
     text-align: center;
     background-color: $accent-bg;
     box-shadow: $accent-bg 1px 10px 10px;
     position: relative;
-
-
     &::after {
       content: '';
       position: absolute;
@@ -834,7 +653,6 @@
       top: 40px;
       left: 0;
     }
-
     &::before {
       content: '';
       position: absolute;
@@ -846,30 +664,22 @@
       right: 0;
     }
   }
-
   &__box {
     padding: 30px 0 85px;
     margin-bottom: 30px;
-
   }
-
   &__img {
     margin: 0 auto 20px;
   }
-
   &__desc {
     max-width: 650px;
     margin: 0 auto 20px;
   }
-
   &__name {
     @extend %roboto-700;
     font-size: 15px;
   }
-
-
 }
-
 
 .reviews__slider.slick-slide {
   margin: 0 60px;
@@ -888,11 +698,10 @@
 .reviews .slick-dots .slick-active button {
   background-color: $white-color;
 }
-
+  
 .reviews .slick-dots li {
   display: inline-block;
   margin: 0 5px;
-
 }
 
 .reviews .slick-dots {
@@ -902,38 +711,26 @@
   text-align: center;
 }
 
-
-
-
 .blog {
   padding: 80px 0 60px;
-
-
   &__title {
     margin-bottom: 60px;
   }
-
   &__info {
     display: flex;
     justify-content: center;
     gap: 25px 40px;
     margin-bottom: 80px;
-
   }
-
   &__info-img {
     height: 180px;
     width: 250px;
     object-fit: cover;
-
   }
-
   &__info-text {
     flex-basis: 650px;
     padding-top: 10px;
-
   }
-
   &__info-title {
     text-transform: uppercase;
     margin-bottom: 20px;
@@ -943,31 +740,24 @@
 
   &__info-desc {
     margin-bottom: 70px;
-
-
   }
-
   &__info-box {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #9a9a9a;
   }
-
   &__info-link {
     color: #48494a;
     transition: .3s all;
-
     &:hover {
       color: $text-color;
     }
   }
-
   &__info-date {
     font-size: 14px;
     padding-left: 10px;
     position: relative;
     color: #48494a;
-
     &::after {
       content: '';
       position: absolute;
@@ -980,26 +770,20 @@
   }
 }
 
-
 .contacts {
   padding: 90px 0 100px;
   background-color: $accent-bg;
-
   &__inner {
     text-align: center;
   }
-
   &__img {
     position: relative;
     left: 110px;
   }
-
   &__box {
     position: relative;
     z-index: 1;
-
   }
-
   &__form {
     background-color: $white-color;
     display: inline-block;
@@ -1010,12 +794,10 @@
     margin-top: -220px;
     box-shadow: #faf7f7 1px 0 10px;
   }
-
   &__title {
     font-size: 35px;
     margin-bottom: 60px;
   }
-
   &__input {
     max-width: 400px;
     width: 100%;
@@ -1025,14 +807,11 @@
     margin: 0 auto 25px;
     border: none;
     border-bottom: 1px solid $text-color;
-
     &::placeholder {
       font-size: 13px;
       color: #9a9a9a;
-
     }
   }
-
   &__textarea {
     max-width: 400px;
     width: 100%;
@@ -1047,7 +826,6 @@
     padding: 5px 15px;
     outline: none;
   }
-
   &__btn {
     background-color: #9a9a9a;
     cursor: pointer;
@@ -1057,38 +835,29 @@
 
 .footer {
   padding: 40px 0;
-
   &__inner {
     display: flex;
     justify-content: space-between;
-
   }
-
   &__info {
     max-width: 270px;
   }
-
   &__title {
     margin-bottom: 20px;
     font-size: 19px;
   }
-
   &__text {
     margin-top: 35px;
   }
-
   &__desc {
     padding-bottom: 20px;
-
     &:last-child {
       padding-bottom: 0;
     }
   }
-
   &__box {
     padding-top: 30px;
   }
-
   &__menu-item {
     padding-bottom: 15px;
 
@@ -1096,24 +865,19 @@
       padding-bottom: 0;
     }
   }
-
   &__menu-link {
     color: $text-color;
     transition: .3s all;
-
     &:hover {
       border-bottom: 1px solid $text-color;
     }
   }
-
   &__info-text {
     margin-bottom: 20px;
   }
-
   &__newsletter-text {
     margin-bottom: 10px;
   }
-
   &__newsletter-input {
     border: none;
     border-bottom: 1px solid #9a9a9a;
@@ -1121,14 +885,11 @@
     width: 250px;
     outline: none;
     margin-right: -7px;
-
     &::placeholder {
       font-size: 15px;
       color: #9a9a9a;
-
     }
   }
-
   &__newsletter-btn {
     background-color: #9a9a9a;
     color: $white-color;
@@ -1141,7 +902,6 @@
   }
 }
 
-
 .cart {
   background-color: #f6f6f2;
   position: absolute;
@@ -1150,103 +910,77 @@
   width: 260px;
   padding: 10px 25px;
   text-align: center;
-
   &__title {
     text-align: center;
     font-size: 19px;
     margin-bottom: 30px;
   }
-
-
   &__alert {
     text-align: center;
     font-size: 20px;
   }
-
   &__close-img {
     position: relative;
     top: -15px;
     left: 100%;
     cursor: pointer;
   }
-
   &__wrapper {
     overflow-y: hidden;
-
   }
-
   &__summary {
     font-size: 16px;
     @extend %roboto-700;
-
   }
-
-
   &__none,
   &-none {
     display: none;
   }
-
   &__order-title {
     margin: 20px 0;
   }
-
   &__item {
     margin-bottom: 45px;
-
   }
-
   &-show {
     display: block;
-
   }
-
   &__item-image {
     width: 100px;
   }
-
   &__item-box {
     display: flex;
     justify-content: space-between;
-
   }
 
   &__delete-img {
     cursor: pointer;
     margin-right: 20px;
   }
-
   &__summary {
     margin-top: 20px;
     text-align: center;
   }
-
   &__summary-text {
     margin-bottom: 20px;
   }
-
   &-counter {
     display: flex;
     margin-top: 20px;
     background-color: $white-color;
     width: 90px;
-
   }
-
   &-counter__control {
     width: 30px;
     cursor: pointer;
     transition: 0.2s ease-in;
     text-align: center;
     background-color: #9a9a9a;
-
   }
-
   &-counter__current {
     width: 40px;
     text-align: center;
   }
-
   &-modal {
     display: none;
     position: fixed;
@@ -1258,22 +992,16 @@
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
   }
-
   &-modal__content {
     margin: 25% auto;
     max-width: 600px;
     background-color: #fff;
     padding: 20px;
   }
-
   &-modal.show {
     display: block;
   }
-
-
-
 }
-
 .form__order {
   &-input {
     padding: 10px;
@@ -1285,7 +1013,6 @@
       @extend %roboto-400;
     }
   }
-
   &-btn {
     background-color: $text-color;
     color: $white-color;
@@ -1296,11 +1023,8 @@
     width: 185px;
     text-transform: uppercase;
     padding: 10px;
-
   }
 }
-
-
 
 .cart--active {
   display: none;
@@ -1315,8 +1039,6 @@
   display: none;
 }
 
-
-
 .wishlist {
   &-modal {
     display: none;
@@ -1329,20 +1051,17 @@
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.5);
   }
-
   &__title {
     font-size: 20px;
     text-align: center;
     margin-bottom: 20px;
   }
-
   &-modal__content {
     margin: 25% auto;
     max-width: 600px;
     background-color: #fff;
     padding: 20px;
   }
-
   &-item__btn {
     background-color: $text-color;
     color: $white-color;
@@ -1353,20 +1072,15 @@
     width: 120px;
     text-transform: uppercase;
     padding: 10px;
-
   }
-
   &__wrapper {
     max-height: 400px;
     overflow: auto;
   }
-
-
   &-none,
   &__none {
     display: none;
   }
-
   &__close {
     position: relative;
     top: -15px;
@@ -1375,12 +1089,8 @@
   }
 }
 
-
-
 .open {
   display: block;
 }
-
-
 
 @import 'media';
