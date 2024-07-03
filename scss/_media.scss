@@ -2,83 +2,60 @@
   .catalog-box {
     grid-template-columns: repeat(3, 1fr);
   }
-
   .delivery {
     &__text {
       max-width: 440px;
     }
-
     &__image:after {
       content: '';
       right: 18px;
       top: 24px;
       width: 390px;
-
     }
   }
-
   .bestsellers__box-info {
     width: 300px;
     margin: 0 auto;
-
   }
-
   .slick-next {
     right: 35px;
   }
-
   .slick-prev {
     left: 35px;
   }
-
 }
-
-
-
 
 @media (max-width:980px) {
   .about {
     &__text {
       max-width: 450px;
     }
-
     &__box {
       padding: 80px 35px;
       margin-top: 320px;
     }
-
   }
-
   .footer {
     &__inner {
       flex-wrap: wrap;
     }
   }
-
-
   .slick-next {
     right: 15px;
   }
-
   .slick-prev {
     left: 15px;
   }
-
 }
-
-
-
 
 @media (max-width:850px) {
   .slider {
     &__title {
       font-size: 45px;
     }
-
     &__content {
       max-width: 490px;
     }
-
     &__btn {
       width: 140px;
     }
@@ -96,32 +73,23 @@
       width: 650px;
       height: 530px;
     }
-
     &__inner {
       flex-direction: column-reverse;
       gap: 40px;
     }
   }
-
-
   .blog {
     padding: 30px 20px;
-
     &__info {
       display: block;
     }
-
-
   }
-
   .bestsellers__box-info {
     width: 270px;
   }
-
   .slick-next {
     right: 0;
   }
-
   .slick-prev {
     left: 0;
   }
@@ -130,60 +98,45 @@
 @media (max-width:720px) {
   .info {
     padding: 60px 0 40px;
-
     &__title {
       margin-bottom: 40px;
     }
-
     &__items {
       display: block;
     }
   }
-
-
-
   .team {
     &__inner {
       display: block;
       max-width: 380px;
     }
-
     &__info {
       margin-bottom: 30px;
-
       &:last-child {
         margin-bottom: 0;
       }
     }
   }
-
   .reviews {
     &__box {
       padding: 90px 0 20px;
     }
-
     &__desc {
       max-width: 480px;
     }
-
   }
-
   .bestsellers__box-info {
     width: 290px;
   }
-
   .slick-arrow {
     top: 105%;
   }
-
   .slick-next {
     right: 30%;
   }
-
   .slick-prev {
     left: 30%;
   }
-
 }
 
 @media (max-width:650px) {
@@ -191,55 +144,42 @@
     &__inner {
       justify-content: center;
     }
-
     &__text {
       max-width: 395px;
     }
   }
-
   .catalog {
     padding-top: 45px;
-
     &__text {
       margin-bottom: 45px;
     }
-
     &-box {
       grid-template-columns: repeat(1, 280px);
       gap: 60px 30px;
     }
   }
-
-
-
   .team {
     padding: 25px 0 40px;
-
     &__title {
       margin-bottom: 30px;
     }
   }
-
   .delivery {
     padding: 40px 15px;
   }
-
   .contacts {
     &__form {
       max-width: 480px;
     }
-
     &__img {
       left: 25px;
     }
   }
-
   .footer {
     &__inner {
       display: block;
     }
   }
-
 }
 
 @media (max-width:560px) {
@@ -250,13 +190,10 @@
       column-gap: 80px;
       padding: 10px 0;
     }
-
     &__phone {
       order: 3;
     }
   }
-
-
   .menu {
     &__btn {
       display: block;
@@ -267,11 +204,9 @@
       right: 10px;
       font-size: 12px;
     }
-
     &__img {
       margin-bottom: 5px;
     }
-
     &__list {
       position: absolute;
       left: 0;
@@ -283,60 +218,45 @@
       transform: translateY(-200%);
       transition: all .3s;
       z-index: 10;
-
     }
-
     &__list.menu--active {
       transform: translateY(35%);
       top: 40px;
     }
-
     &__list-link {
       color: $white-color;
       display: block;
       padding: 10px 0;
       font-size: 15px;
     }
-
   }
-
   .user-nav {
     gap: 15px;
   }
-
-
   .slider {
     &__item {
       min-height: 700px;
     }
-
     &__title {
       font-size: 32px;
       line-height: 40px;
     }
-
     &__text {
       font-size: 21px;
     }
-
     &__content {
       margin-top: 100px;
     }
-
     &__btn {
       width: 120px;
-
       &:last-child {
         margin-left: 60px;
       }
     }
-
     .about__box {
       padding: 50px 35px;
     }
-
   }
-
   .contacts {
     &__form {
       max-width: 480px;
@@ -346,28 +266,21 @@
       left: 5px;
     }
   }
-
   .reviews {
     padding: 40px 0;
-
     &__desc {
       width: 350px;
       font-size: 15px;
     }
-
-
     &__info::before {
       content: "";
       position: absolute;
       top: 180px;
     }
-
     &__info::after {
       display: none;
-
     }
   }
-
   .about {
     background-image: url('../images/about-bg.jpg');
     background-repeat: no-repeat;
@@ -377,10 +290,7 @@
       margin-top: 250px;
     }
   }
-
-
 }
-
 
 @media (max-width:460px) {
   .header {
@@ -389,87 +299,63 @@
       gap: 10px;
     }
   }
-
-
-
   .slider {
     &__content {
       margin-top: 90px;
       padding: 35px 20px;
     }
-
     &__item {
       background-position: revert;
       min-height: 530px;
     }
-
     &__title {
       font-size: 23px;
     }
-
     &__text {
       font-size: 17px;
     }
-
     &__content {
       margin-top: 100px;
     }
-
     &__btn {
       width: 110px;
-
       &:last-child {
         margin-left: 30px;
       }
     }
-
-
   }
-
-
-
   .title {
     font-size: 32px;
   }
-
   .catalog__btn {
     font-size: 16px;
   }
-
   .team {
     &__img {
       width: 100%;
       height: 100%;
     }
   }
-
   .delivery__item {
     font-size: 17px;
   }
-
   .contacts {
     &__form {
       max-width: 360px;
       padding: 30px;
     }
-
     &__img {
       left: 0;
     }
-
     &__title {
       font-size: 29px;
     }
   }
-
   .reviews {
     &__desc {
       width: 250px;
-
     }
-
   }
-
   .bestsellers__slider .slick-dots button {
     width: 12px;
     height: 12px;
@@ -479,25 +365,19 @@
     padding: 0;
     font-size: 0;
   }
-
   .bestsellers__slider .slick-dots .slick-active button {
     background-color: $white-color;
   }
-
   .bestsellers__slider .slick-dots li {
     display: inline-block;
     margin: 0 5px;
-
   }
-
   .bestsellers__slider .slick-dots {
     margin-top: 20px;
     position: relative;
     z-index: 6;
     text-align: center;
   }
-
-
 }
 
 @media (max-width:400px) {
@@ -506,55 +386,39 @@
       max-width: 280px;
       padding: 30px;
     }
-
   }
-
   .footer {
     padding: 10px;
-
     &__newsletter-input {
       width: 170px;
     }
   }
-
   .catalog__text {
     font-size: 14px;
   }
 }
 
-
-
-
-
 @media (max-width:340px) {
   .slider {
     &__btn {
       width: 100px;
-
       &:last-child {
         margin-left: 20px;
       }
     }
-
     &__item {
       background-position: revert;
-
     }
   }
-
-
   .about__btn {
     width: 140px;
   }
-
   .contacts {
     &__form {
       max-width: 260px;
       padding: 15px;
     }
-
   }
-
   .modal__title {
     font-size: 26px;
   }
@@ -566,32 +430,24 @@
       margin-top: 90px;
       padding: 35px 20px;
     }
-
     &__item {
       min-height: 590px;
     }
-
     &__title {
       font-size: 23px;
       line-height: 37px;
     }
-
     &__text {
       font-size: 17px;
     }
-
     &__content {
       margin-top: 100px;
     }
-
     &__btn {
       width: 100px;
-
       &:last-child {
         margin-left: 30px;
       }
     }
-
-
   }
 }
