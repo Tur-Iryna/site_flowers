@@ -1,27 +1,19 @@
 $(function () {
-
-
-
-
   let count = $('.catalog-content').length,
     start = 8,
     show = 4;
-
+  
   $('.catalog-content').addClass('none');
   $('.catalog-content:lt(' + start + ')').removeClass('none');
-
+  
   $('.catalog__btn').on('click', function (e) {
     e.preventDefault();
-
     start = (start + show >= count) ? start + show : count;
     $('.catalog-content:lt(' + start + ')').removeClass('none');
     if ($('.catalog-content:not(.none)').length == count) {
       $('.catalog__btn').remove();
-
     }
   })
-
-
 
   $('.modal__btn').on('click', function (e) {
     e.preventDefault();
@@ -31,9 +23,6 @@ $(function () {
     $($(this).attr('href')).addClass('modal__btn-content--active');
 
   });
-
-
-
 
   $(".slider").slick({
     arrows: false,
@@ -53,15 +42,12 @@ $(function () {
         breakpoint: 1120,
         settings: {
           slidesToShow: 2,
-
         }
-
       },
       {
         breakpoint: 720,
         settings: {
           slidesToShow: 1,
-
         }
       },
       {
@@ -72,10 +58,7 @@ $(function () {
           dots: true,
         }
       }
-
     ]
-
-
   });
 
   $(".reviews__slider").slick({
@@ -87,81 +70,51 @@ $(function () {
     slidesToScroll: 1,
     arrows: false,
   });
-
-
-
-
   $(function () {
     $('.menu__btn').on('click', function () {
       $('.menu__list').toggleClass('menu--active');
     });
-
   });
 });
 
-
-
 let isScrolling = false;
-
 $(window).on("DOMMouseScroll mousewheel", function (e) {
-
   if (!isScrolling) {
     isScrolling = true;
-
     let delta = parseInt(e.originalEvent.wheelDelta || -e.originalEvent.detail);
-
     if (delta >= 0) {
       isScrolling = false;
-
       $('.connect__hidden').removeClass('connect__hidden');
-
     } else {
-
       if ($(window).scrollTop() > 1000) {
         $('.connect').addClass('connect__hidden');
       }
-
       isScrolling = false;
-
     }
   }
-
 });
-
-
-
 
 let modal = document.getElementById("modal-user");
 let button = document.getElementById("modal-button");
 let close = document.getElementsByClassName("modal__close")[0];
 
-
 button.onclick = function () {
   modal.style.display = "block";
 }
-
 close.onclick = function () {
   modal.style.display = "none";
 }
-
-
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 }
 
-
-
-
-
 let countWishlist = 0;
 const wishlistButtons = document.querySelectorAll(".catalog-box__wishlist");
-
 wishlistButtons.forEach(button => {
   button.addEventListener("click", function () {
     let cartWishlist = document.querySelector(".user-nav__num");
-
     setTimeout(function () {
       countWishlist++;
       cartWishlist.textContent = countWishlist;
@@ -169,15 +122,11 @@ wishlistButtons.forEach(button => {
   });
 });
 
-
-
 let cartCounter = 0;
 const cartButtons = document.querySelectorAll(".catalog-box__btn");
-
 cartButtons.forEach(button => {
   button.addEventListener("click", function () {
     let cartNum = document.querySelector(".user-nav__num-cart");
-
     setTimeout(function () {
       cartCounter++;
       cartNum.textContent = cartCounter;
@@ -185,38 +134,20 @@ cartButtons.forEach(button => {
   });
 });
 
-
-
-
-
-
-
-
 const cartWrapper = document.querySelector('.cart__wrapper')
-
 window.addEventListener('click', function (event) {
-
-
-
-
   let openModalBtn = document.querySelector('.user-nav__cart');
   let modal = document.querySelector('.cart-modal');
-
-
   openModalBtn.addEventListener('click', function () {
     modal.classList.add('show');
   });
-
 
   let closeModalBtn = document.querySelector('.cart__close-img');
   closeModalBtn.addEventListener('click', function () {
     modal.classList.remove('show');
   });
-
-
-
+  
   if (event.target.hasAttribute('data-cart')) {
-
     const card = event.target.closest('.catalog-box__info');
     const productInfo = {
       id: card.dataset.id,
@@ -225,6 +156,7 @@ window.addEventListener('click', function (event) {
       price: card.querySelector('.catalog-box__price').innerText,
       delete: 'images/icons/delete.png'
     };
+    
     const cartItemHTML = ` <div class="cart__item" data-id="${productInfo.id}">
                     <div class="cart__item-top">
                       <div class="cart__item-img">
@@ -248,12 +180,9 @@ window.addEventListener('click', function (event) {
                   </div>`;
 
     cartWrapper.insertAdjacentHTML('beforeend', cartItemHTML);
-
     CartStatus();
     CartCalcPrice();
   }
-
-
 
   document.querySelector('.user-nav__cart').addEventListener('click', function () {
     document.querySelector('.cart-modal').classList.toggle('cart-show');
@@ -265,29 +194,21 @@ window.addEventListener('click', function (event) {
     cartModal.classList.remove('cart-show');
   });
 
-
   const deleteButtons = document.querySelectorAll('.cart__delete-img');
-
-
   deleteButtons.forEach(button => {
     button.addEventListener('click', function (event) {
       event.preventDefault();
-
       const cartItem = this.closest('.cart__item');
-
       if (cartItem) {
         cartItem.remove();
-
         const remainingItems = document.querySelectorAll('.cart__item');
         const itemCountElement = document.querySelector('.user-nav__num-cart');
-
         if (itemCountElement) {
           itemCountElement.textContent = remainingItems.length;
         }
         CartStatus();
       }
     });
-
   });
 
   function CartStatus() {
@@ -305,9 +226,7 @@ window.addEventListener('click', function (event) {
       orderForm.classList.add('cart-none');
       carttitle.classList.add('cart-none');
     }
-  }
-
-
+  };
 
   const cartContainer = document.querySelector('.cart__wrapper');
   const cartItems = document.querySelectorAll('.cart__item');
@@ -316,48 +235,32 @@ window.addEventListener('click', function (event) {
   } else {
     cartContainer.style.overflowY = 'hidden';
   }
-
-
-})
-
+});
 
 function CartCalcPrice() {
   const cartWrapper = document.querySelector('.cart__wrapper');
   const cartItems = document.querySelectorAll('.cart__item');
-
   const totalPriceEl = document.querySelector('.cart__summary-price');
   let totalPrice = 0;
-
   cartItems.forEach(function (item) {
-
     const amountEl = item.querySelector('[data-counter]');
     const priceEl = item.querySelector('.cart__item-price');
     const currentPrice = parseInt(amountEl.innerText) * parseInt(priceEl.innerText);
     totalPrice += currentPrice;
   });
-
   totalPriceEl.innerText = totalPrice;
 
 };
 
-
-
-
 window.addEventListener('click', function (event) {
-
   let counter;
-
   if (event.target.dataset.action === "plus" || event.target.dataset.action === "minus") {
     const cartCounter = event.target.closest('.cart-counter');
     counter = cartCounter.querySelector('[data-counter]');
   }
-
-
-
   if (event.target.dataset.action === "plus") {
     counter.innerText = ++counter.innerText;
   };
-
   if (event.target.dataset.action === "minus") {
     if (parseInt(counter.innerText) > 1) {
       counter.innerText = --counter.innerText;
@@ -366,23 +269,11 @@ window.addEventListener('click', function (event) {
       CartStatus();
       CartCalcPrice();
     }
-
   }
-
   if (event.target.hasAttribute('data-action') && event.target.closest('.cart__wrapper')) {
     CartCalcPrice();
   }
-
-
-
-
-
-
-
-
 });
-
-
 
 window.addEventListener('DOMContentLoaded', function () {
   let wishlistContainer = document.querySelector('.user-nav__wishlist');
@@ -399,17 +290,13 @@ window.addEventListener('DOMContentLoaded', function () {
     modalWishlist.classList.remove('open');
   });
 
-
   let wishlistIcons = document.querySelectorAll('.catalog-box__wishlist');
   let wishlistWrapper = document.querySelector('.wishlist__wrapper');
-
-
   wishlistIcons.forEach(function (wishlistIcon) {
     wishlistIcon.addEventListener('click', function () {
       let title = this.parentElement.querySelector('.catalog-box__title').textContent;
       let price = this.parentElement.querySelector('.catalog-box__price').textContent;
       let imageSrc = this.parentElement.querySelector('.catalog-box__img').getAttribute('src');
-
       let item = document.createElement('div');
       item.classList.add('wishlist-item');
       item.innerHTML = `
@@ -420,29 +307,13 @@ window.addEventListener('DOMContentLoaded', function () {
         </div>
         <button data-cart type="button" class="wishlist-item__btn">В кошик</button>
       `;
-
-
       wishlistWrapper.appendChild(item);
-
       let addToCartBtn = item.querySelector('.wishlist-item__btn');
-
-
       addToCartBtn.addEventListener('click', function () {
-
       });
-
-
     });
   });
-
-
-
-
 });
-
-
-
-
 
 $(".menu").on("click", "a", function (e) {
   e.preventDefault();
@@ -451,14 +322,7 @@ $(".menu").on("click", "a", function (e) {
   $('body,html').animate({ scrollTop: top }, 1500);
 });
 
-
 AOS.init()
-
-
-
-
-
-
 
 
 
